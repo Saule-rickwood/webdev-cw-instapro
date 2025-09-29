@@ -100,3 +100,33 @@ export function addPost({token, data }) {
     return response.json();
   }); 
 }
+
+export function likePost(id, token) {
+  return fetch(postsHost+'/'+id+'/like', {
+    method: "POST",
+    headers: {
+      Authorization: token,
+    },
+    
+  }).then((response) => {
+    if (response.status === 401) {
+      throw new Error("Вы не авторизованы");
+    }
+    return response.json();
+  });  
+}
+
+export function dislikePost(id, token) {
+  return fetch(postsHost+'/'+id+'/dislike', {
+    method: "POST",
+    headers: {
+      Authorization: token,
+    },
+    
+  }).then((response) => {
+    if (response.status === 401) {
+      throw new Error("Вы не авторизованы");
+    }
+    return response.json();
+  });  
+}

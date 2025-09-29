@@ -1,6 +1,8 @@
 import { USER_POSTS_PAGE } from "../routes.js";
 import { renderHeaderComponent } from "./header-component.js";
 import { posts, goToPage } from "../index.js";
+import { handleLikes } from "../handleLikes.js";
+
 
 export function renderPostsPageComponent({ appEl }) {
   // @TODO: реализовать рендер постов из api
@@ -44,6 +46,7 @@ export function renderPostsPageComponent({ appEl }) {
               </div>`;
 
   appEl.innerHTML = appHtml;
+  handleLikes()
 
   renderHeaderComponent({
     element: document.querySelector(".header-container"),

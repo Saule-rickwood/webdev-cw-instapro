@@ -1,5 +1,6 @@
 import { renderHeaderComponent } from "./header-component.js";
 import { posts } from "../index.js";
+import { handleLikes } from "../handleLikes.js";
 export function renderUserPageComponent({ appEl }) {
     const postsHtml = posts.map(
         (p) => ` <li class="post">
@@ -39,7 +40,8 @@ export function renderUserPageComponent({ appEl }) {
                     </ul>
                   </div>`;
     
-    appEl.innerHTML = appHtml;
+  appEl.innerHTML = appHtml;
+  handleLikes()
     renderHeaderComponent({
         element: document.querySelector(".header-container"),
       });
