@@ -31,14 +31,14 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
     const textArea = document.querySelector(".add-post-textarea");
    
     document.getElementById("add-button").addEventListener("click", () => {
-      // if (imageUrl === "") {
-      //   alert("Введите картинку");
-      //   return;
-      // }
-      // if (textArea.value === "") {
-      //   alert("Введите описание");
-      //   return;
-      // }
+      if (imageUrl === "") {
+        alert("Введите картинку");
+        return;
+      }
+      if (textArea.value === "") {
+        alert("Введите описание");
+        return;
+      }
       onAddPostClick({
         description: textArea.value,
         imageUrl,
