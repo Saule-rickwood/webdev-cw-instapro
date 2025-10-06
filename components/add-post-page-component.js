@@ -36,7 +36,7 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
         },
       });
     }
-    const textArea = document.querySelector(".add-post-textarea");
+    const textArea = document.querySelector(".textarea");
 
     document.getElementById("add-button").addEventListener("click", () => {
       if (imageUrl === "") {
